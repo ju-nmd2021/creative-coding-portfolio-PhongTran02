@@ -8,14 +8,21 @@
   },
   {
     "file": "experiments/lab1.js",
-    "name": "Name of your experiment",
+    "name": "So beginnersish grid",
     "description": "Explains the what and the why. What is the main idea? What is the purpose?",
     "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
     "github": "https://www.github.com/pixelkind"
   },
   {
     "file": "experiments/lab2.js",
-    "name": "Name of your experiment",
+    "name": "German Worm",
+    "description": "Explains the what and the why. What is the main idea? What is the purpose?",
+    "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
+    "github": "https://www.github.com/pixelkind"
+  },
+  {
+    "file": "experiments/lab3.js",
+    "name": "Trippy enough view",
     "description": "Explains the what and the why. What is the main idea? What is the purpose?",
     "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
     "github": "https://www.github.com/pixelkind"
