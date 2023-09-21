@@ -51,7 +51,7 @@ function setup() {
 
 function textBox() {
   textSize(20);
-  text("click anywhere to see the trippiness!", innerWidth / 2 - 90, innerHeight / 2 - 20, 180);
+  text("click anywhere to see the epicness!", innerWidth / 2 - 90, innerHeight / 2 - 20, 180);
 }
 
 function mouseClicked() {

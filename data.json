@@ -15,7 +15,14 @@
   },
   {
     "file": "experiments/lab3.js",
-    "name": "Trippy enough view",
+    "name": "Square of harmony",
+    "description": "Explains the what and the why. What is the main idea? What is the purpose?",
+    "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
+    "github": "https://www.github.com/pixelkind"
+  },
+  {
+    "file": "experiments/lab4.js",
+    "name": "Trippy enough to rape your eyes _ sorry",
     "description": "Explains the what and the why. What is the main idea? What is the purpose?",
     "background": "Positions the work in a context by presenting related work and introducing aesthetic or scientific theories related to the work.",
     "github": "https://www.github.com/pixelkind"
