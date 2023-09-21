@@ -29,59 +29,53 @@ let theThing;
 let colorPallette;
 let angle = 0;
 let synth;
+let initialize;
 
 // The following 3 lines of code was adapted from https://www.geeksforgeeks.org/how-to-generate-random-number-in-given-range-using-javascript/ Accessed: 2023-09-14
 function randomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
-// The following 8 lines of code was adapted from https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb Accessed: 2023-09-14
-function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16),
-      }
-    : null;
-}
-
 function setup() {
   createCanvas(innerWidth, innerHeight);
   background(200);
   angleMode(DEGREES);
-  let color1 = color(
-    hexToRgb("#58A79E").r,
-    hexToRgb("#58A79E").g,
-    hexToRgb("#58A79E").b
-  );
-  let color2 = color(
-    hexToRgb("#A79E58").r,
-    hexToRgb("#A79E58").g,
-    hexToRgb("#A79E58").b
-  );
-  let color3 = color(
-    hexToRgb("#9E58A7").r,
-    hexToRgb("#9E58A7").g,
-    hexToRgb("#9E58A7").b
-  );
+  let color1 = color("#58A79E");
+  let color2 = color("#A79E58");
+  let color3 = color("#9E58A7");
   //define first and then spawn the thing
   colorPallette = [color1, color2, color3];
   theThing = new Thing(100, 100);
   synth = new Tone.MonoSynth().toDestination();
+  initialize = false;
+}
+
+function textBox() {
+  textSize(20);
+  text("click anywhere to see the trippiness!", innerWidth / 2 - 90, innerHeight / 2 - 20, 180);
+}
+
+function mouseClicked() {
   Tone.start();
+  console.log("lmao");
+  if (initialize === false) {
+    background(200);
+    initialize = true;
+  }
 }
 
 function draw() {
-  theThing.draw();
-  theThing.update();
-
-  if (theThing.position.x > width || theThing.position.x < 0) {
-    theThing.velocity.x *= -1;
-    synth.triggerAttackRelease("F3", "8n");
-  }
-  if (theThing.position.y > height || theThing.position.y < 0) {
-    theThing.velocity.y *= -1;
-    synth.triggerAttackRelease("C4", "8n");
+  if (initialize) {
+    theThing.draw();
+    theThing.update();
+    if (theThing.position.x > width || theThing.position.x < 0) {
+      theThing.velocity.x *= -1;
+      synth.triggerAttackRelease("F3", "8n");
+    }
+    if (theThing.position.y > height || theThing.position.y < 0) {
+      theThing.velocity.y *= -1;
+      synth.triggerAttackRelease("C4", "8n");
+    }
+  } else {
+    textBox();
   }
 }
